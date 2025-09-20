@@ -4,26 +4,36 @@ df = pd.read_csv('GooglePlayStore_wild.csv')
 
 #print(pd.isnull(df)["Rating"])
 #print(df[pd.isnull(df)]["Rating"].head(2))
-
 #df.fillna({"Rating": df["Rating"].value_counts().index(0)}, inplace = True)
-df.fillna({"Rating": round(df["Rating"].mean(), 1)}, inplace = True)
-print(df["Rating"].mean())
+#df.info()
 
+#df["Size"] = df["Size"].replace("Varies with device", "1")
+#print(df[df["Category"] == "TOOLS"]["Size"].max())
 
-a = "$5.5"
-a = float(a[1:])
-
-def change_price(a):
-    if a[0] == "$":
-        return float(a[1:])
-    return 0
-
-df["Price"] = df["Price"].apply(change_price)
-
-df.info()
+print(df.head(20))
+#df["Size"] = df["Size"].replace("", "1")
+#print(df[df["Type"] == "Paid"]["Profit"].max())
 
 
 
+
+
+
+#print(df["Rating"].mean())
+#
+#
+#a = "$5.5"
+#a = float(a[1:])
+#
+#def change_price(a):
+#    if a[0] == "$":
+#        return float(a[1:])
+#    return 0
+#
+#df["Price"] = df["Price"].apply(change_price)
+#
+#df.info()
+#
 
 
 
